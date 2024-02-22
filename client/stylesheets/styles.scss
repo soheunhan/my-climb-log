@@ -1,0 +1,225 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Vast+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+  background-color: $neutral-5;
+  font-family: 'Roboto', serif;
+}
+
+.main-container {
+  background-color: $neutral-1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+  width: 95%;
+  height: 100vh;
+  gap: 40px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: $neutral-5;
+  width: 100%;
+  max-width: 700px;
+  margin: 128px 0px 62px 0px;
+
+  //   box-shadow: 12px 12px $berry-jam-4;
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 5.9vh;
+  text-align: center;
+  //   background-color: $neutral-2;
+}
+
+h2 {
+  color: $neutral-5;
+  width: 100%;
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 3vh;
+  text-align: center;
+  margin: 0;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.session-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.session-container {
+  background-color: $neutral-2;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 36px;
+  gap: 8px;
+  color: $neutral-5;
+}
+
+.session-date {
+  font-family: 'Roboto Slab', serif;
+  font-size: 2vh;
+  background-color: $berry-jam-4;
+  color: $light-blue-1;
+  position: relative;
+  padding: 12px 22px;
+  bottom: 36px;
+}
+
+.session-detail-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 0 20px 0;
+  padding: 0;
+  li {
+    font-size: 1.5vh;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    align-items: center;
+    text-align: center;
+    p {
+      font-family: 'Comfortaa', sans-serif;
+      font-size: 3vh;
+      text-align: center;
+      margin: 0;
+    }
+  }
+}
+
+.nav-btn {
+  align-items: center;
+  background-color: $berry-jam-1;
+  box-shadow: 12px 12px $berry-jam-4;
+  border: 5px solid $berry-jam-5;
+  border-radius: 60px;
+  box-sizing: border-box;
+  color: $neutral-5;
+  width: 75%;
+  height: 8vh;
+  justify-content: center;
+  max-width: 100%;
+  padding: 0 62px;
+  font-size: 2.3vh;
+  text-align: center;
+  font-family: 'Roboto', serif;
+  &:hover {
+    transform: translate(16px, 16px);
+    box-shadow: none;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.new-workout-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  .workout-options-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+  }
+  .workout-options-btns-container {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    gap: 20px;
+  }
+  .level-container {
+    font-size: 3vh;
+    #level-text {
+      font-size: 5vh;
+      margin: 0;
+    }
+  }
+  p {
+    font-size: 3vh;
+    text-align: center;
+  }
+  .level-btn {
+    font-size: 5vh;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+  .types-btn {
+    align-items: center;
+    background-color: $light-blue-1;
+    // box-shadow: 12px 12px $light-blue-3;
+    border: 2px solid $light-blue-5;
+    border-radius: 12px;
+    box-sizing: border-box;
+
+    height: 5vh;
+    justify-content: center;
+
+    padding: 0 18px;
+    font-size: 2vh;
+    text-align: center;
+    font-family: 'Roboto', serif;
+    &:hover {
+      transform: translate(4px, 4px);
+    }
+  }
+  .nav-btn {
+    width: 50%;
+    margin: 8px;
+    flex-shrink: 1;
+  }
+  .send-workout-btns {
+    margin: 36px 0;
+  }
+  #reset-btn {
+    font-size: 2vh;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+}
+
+.workout-detail-container {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 0 20px 0;
+  padding: 0;
+  background-color: $neutral-2;
+  h2 {
+    font-size: 2vh;
+    margin: 12px;
+  }
+  p {
+    text-align: center;
+    font-size: 3vh;
+    text-align: center;
+    margin: 12px;
+  }
+}

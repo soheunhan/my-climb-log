@@ -1,0 +1,17 @@
+import { configureStore } from '@reduxjs/toolkit';
+
+import workoutsReducer from '../features/workouts/workoutsSlice.js';
+import sessionsReducer from '../features/sessions/sessionsSlice.js';
+import { workoutApiSlice } from '../features/workouts/workoutApi.js';
+
+const store = configureStore({
+  reducer: {
+    workouts: workoutsReducer,
+    // sessions: sessionsReducer,
+    workoutApi: workoutApiSlice.reducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(workoutApiSlice.middleware),
+});
+
+export default store;
