@@ -1,5 +1,6 @@
 import React from 'react';
 
+//rendering individual workouts in session history page /workout/sessionid
 const Workouts = ({
   level,
   wallType,

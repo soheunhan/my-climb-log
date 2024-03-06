@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom';
 import Workouts from '../features/workouts/Workouts.jsx';
 import { useGetWorkoutQuery } from '../features/workouts/workoutApi.js';
 
+//calling workouts component to render individual workouts in session history page
 const IndivSession = () => {
+  // fetching all workout data
   const { data, error, isLoading } = useGetWorkoutQuery();
 
   const currSession = [];
@@ -28,12 +30,11 @@ const IndivSession = () => {
       }
     }
   }
-  //   console.log(params.sessionId);
 
   return (
     <div className="main-container">
       <h2>{params.sessionId}</h2>
-      <p>progression graph here</p>
+      <h2>progression graph here</h2>
       {currSession}
     </div>
   );

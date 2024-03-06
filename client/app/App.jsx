@@ -1,9 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+//importing components
 import Home from '../pages/Home.jsx';
 import NewWorkout from '../pages/NewWorkout.jsx';
 import IndivSession from '../pages/IndivSession.jsx';
 
+//setting up react routers
 const App = () => {
   return (
     <Router>

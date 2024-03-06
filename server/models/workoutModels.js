@@ -15,7 +15,6 @@ const workoutSchema = new Schema({
 });
 
 const Workout = mongoose.model('workouts', workoutSchema);
-
 const sessionSchema = new Schema({
   attempts: Number,
   sends: Number,

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// redering individual sessions in home page
 const Sessions = ({ date, attempts, sends, peak, id }) => {
   return (
     <Link to={'/workout/' + date} className="session-container" id={id}>

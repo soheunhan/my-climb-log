@@ -14,6 +14,7 @@ import {
 } from '../features/workouts/workoutApi.js';
 import Sessions from '../features/sessions/Sessions.jsx';
 
+// new workout page
 const NewWorkout = () => {
   const {
     attempts,
@@ -29,6 +30,7 @@ const NewWorkout = () => {
     sent,
   } = useSelector((state) => state.workouts);
 
+  // fetching session data to set current session
   const { data, error, isLoading } = useGetSessionQuery();
 
   const currSession = {};
@@ -45,15 +47,18 @@ const NewWorkout = () => {
       }
     }
   }
-  console.log(currSession);
 
   const dispatch = useDispatch();
+
+  // API hooks
   const [addWorkout] = useAddWorkoutMutation();
   const [updateSession] = useUpdateSessionMutation();
 
+  // handling button click event
   const handleSubmit = (e) => {
     dispatch(setSent(e.target.name));
     const date = new Date().toISOString().slice(0, 10);
+    //adding workout to DB
     addWorkout({
       level,
       wallType,
@@ -70,11 +75,12 @@ const NewWorkout = () => {
       })
       .catch((err) => console.log(err));
 
+    // update current session
     currSession.peak < level ? (currSession.peak = level) : currSession.peak;
     currSession.attempts++;
     e.target.name === 'sent' ? currSession.sends++ : currSession.sends;
 
-    // console.log(attempts, sends, peak);
+    // update session on DB
     updateSession(currSession).then((session) => {
       console.log('session updated: ', session);
     });
@@ -90,7 +96,7 @@ const NewWorkout = () => {
 
   return (
     <div className="main-container">
-      <h1>New Workout</h1>
+      <h1>new workout</h1>
       <h2>Current Session</h2>
       <Sessions
         date={currSession.date}
