@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //handle requests for static files
-app.use(express.static(path.join(__dirname, '../index.html')));
+app.use('/dist', express.static(path.join(__dirname, '../dist')));
 
 //root
 app.get('/', (req, res) => {
