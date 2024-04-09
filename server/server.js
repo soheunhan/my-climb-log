@@ -1,13 +1,13 @@
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const workoutRouter = require('./routes/workout');
 
 const app = express();
 const PORT = 3000;
-const MONGO_URI =
-  'mongodb+srv://soeun1219:kPNU11Dqwq19i66F@climbing.fblxaq3.mongodb.net/?retryWrites=true&w=majority';
+const MONGO_URI = process.env.MONGO_URI;
 
 mongoose
   .connect(MONGO_URI, {
