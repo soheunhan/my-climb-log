@@ -1,9 +1,9 @@
-const express = require('express');
-const path = require('path');
-const mongoose = require('mongoose');
-require('dotenv').config();
+const express = require("express");
+const path = require("path");
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-const workoutRouter = require('./routes/workout');
+const workoutRouter = require("./routes/workout");
 
 const app = express();
 const PORT = 3000;
@@ -12,28 +12,28 @@ const MONGO_URI = process.env.MONGO_URI;
 mongoose
   .connect(MONGO_URI, {
     // sets the name of the DB that our collections are part of
-    dbName: 'my_climb_log',
+    dbName: "my_climb_log",
   })
-  .then(() => console.log('DB connected'))
-  .catch((err) => console.log('DB CONNECTION ERROR: ', err));
+  .then(() => console.log("DB connected"))
+  .catch((err) => console.log("DB CONNECTION ERROR: ", err));
 
 // Express middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //handle requests for static files
-app.use('/dist', express.static(path.join(__dirname, '../dist')));
+app.use("/dist", express.static(path.join(__dirname, "../../dist")));
 
 //root
-app.get('/', (req, res) => {
-  return res.sendFile(path.resolve(__dirname, '../index.html'));
+app.get("/", (req, res) => {
+  return res.sendFile(path.resolve(__dirname, "../index.html"));
 });
 
 //Workout router
-app.use('/workout', workoutRouter);
+app.use("/workout", workoutRouter);
 
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, '../index.html'), function (err) {
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "../index.html"), function (err) {
     if (err) {
       res.status(500).send(err);
     }
@@ -49,9 +49,9 @@ app.use((err, req, res, next) => {
   const defaultErr =
     // defaultErr object
     {
-      log: 'Express error handler caught unknown middleware error',
+      log: "Express error handler caught unknown middleware error",
       status: 500,
-      message: { err: 'An error occurred' },
+      message: { err: "An error occurred" },
     };
   const errorObj = Object.assign(defaultErr, err);
   console.log(errorObj.log);
