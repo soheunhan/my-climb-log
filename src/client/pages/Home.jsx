@@ -1,9 +1,9 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import Sessions from '../features/sessions/Sessions.jsx';
+import React from "react";
+import { useSelector } from "react-redux";
+import Sessions from "../features/sessions/Sessions.jsx";
 
-import { useGetSessionQuery } from '../features/workouts/workoutApi.js';
-import ButtonLink from '../components/ButtonLink.jsx';
+import { useGetSessionQuery } from "../features/workouts/workoutApi.js";
+import ButtonLink from "../components/ButtonLink.jsx";
 
 // rendering start workout button and session history
 const Home = () => {
@@ -31,8 +31,8 @@ const Home = () => {
   }
 
   return (
-    <div className="main-container">
-      <h1>climbsmith</h1>
+    <div>
+      <h1 className="text-4xl text-blue-700 underline">climbsmith</h1>
       <ButtonLink to="/workout/new">Start Climbing!</ButtonLink>
       <div className="session-list">{sessions}</div>
     </div>
